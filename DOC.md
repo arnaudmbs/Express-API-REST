@@ -59,6 +59,16 @@ GET /products/name/:name
 
 ---
 
+### Récupérer les catégories
+
+```
+GET /products/categories
+```
+
+**Réponse** `200` : tableau de `string[]`
+
+---
+
 ### Filtrer les produits par catégorie
 
 ```
