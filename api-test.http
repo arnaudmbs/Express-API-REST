@@ -24,3 +24,55 @@ Content-Type: application/json
 
 ### delete a task
 DELETE http://localhost:3000/tasks/2 HTTP/1.1
+
+###############################################
+# PRODUCTS
+###############################################
+
+### Lister tous les produits
+GET http://localhost:3000/products HTTP/1.1
+
+### Récupérer un produit par ID
+GET http://localhost:3000/products/1 HTTP/1.1
+
+### Récupérer un produit par nom
+GET http://localhost:3000/products/name/iPhone%2015%20Pro HTTP/1.1
+
+### Récupérer les produits par catégorie
+GET http://localhost:3000/products/category/audio HTTP/1.1
+
+### Vérifier si un produit existe
+GET http://localhost:3000/products/exists/MacBook%20Pro%2016%22 HTTP/1.1
+
+### Compter le nombre total de produits
+GET http://localhost:3000/products/count/total HTTP/1.1
+
+### Créer un nouveau produit
+POST http://localhost:3000/products HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Nouveau Produit Test",
+  "description": "Un produit de test ajouté via l'API",
+  "price": 49.99,
+  "category": "accessoire",
+  "stock": 10
+}
+
+### Modifier un produit existant
+PUT http://localhost:3000/products/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "MacBook Pro 16\" M3 Max",
+  "description": "Ordinateur portable Apple M3 Max, 36 Go RAM, 1 To SSD",
+  "price": 3999.99,
+  "category": "informatique",
+  "stock": 12
+}
+
+### Supprimer un produit par ID
+DELETE http://localhost:3000/products/5 HTTP/1.1
+
+### Supprimer un produit par nom
+DELETE http://localhost:3000/products/name/Nouveau%20Produit%20Test HTTP/1.1
